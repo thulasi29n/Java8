@@ -1,0 +1,10 @@
+package in.ashokit;
+
+public class Demo1 {
+
+	public static void main(String[] args) {
+		int n = (int) (Math.random() * 5);
+		System.out.println(n);
+	}
+
+}

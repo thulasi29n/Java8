@@ -1,0 +1,11 @@
+package in.ashokit;
+
+public class ThreadDemo2 {
+
+	public static void main(String[] args) {
+		UserThread ut = new UserThread();
+		Thread t = new Thread(ut);
+		t.start();
+	}
+
+}

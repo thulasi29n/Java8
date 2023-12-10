@@ -1,0 +1,17 @@
+package in.ashokit;
+
+public class Person {
+
+	private Integer age;
+	private String name;
+	private String country;
+	
+	public Person(Integer age, String name, String country) {
+		this.age = age;
+		this.name = name;
+		this.country = country;
+	}
+	
+	
+
+}

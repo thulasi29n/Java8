@@ -1,0 +1,9 @@
+package in.ashokit;
+
+@FunctionalInterface
+public interface MyInterface {
+
+	public void sayHi();
+	public void m2();
+
+}

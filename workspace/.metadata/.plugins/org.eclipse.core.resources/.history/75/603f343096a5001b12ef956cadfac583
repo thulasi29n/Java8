@@ -1,0 +1,11 @@
+package in.ashokit;
+
+public interface Vehicle {
+
+	public void cleanVehicle();
+
+	public default void startVehicle() {
+		System.out.println("Vehicle is starting.....");
+	}
+
+}

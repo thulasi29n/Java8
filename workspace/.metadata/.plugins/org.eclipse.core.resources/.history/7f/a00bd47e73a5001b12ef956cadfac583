@@ -1,0 +1,37 @@
+package in.ashokt;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Demo5 {
+
+	public static List<Patient> getPatientsData() {
+		List<Patient> list = new ArrayList<>();
+		list.add(new Patient("Raju", 56, 100, 80));
+		list.add(new Patient("Ramu", 36, 120, 60));
+		list.add(new Patient("Rani", 46, 90, 80));
+		return list;
+	}
+	
+	public static void main(String[] args) {
+		
+	}
+
+}
+
+class Patient {
+
+	String name;
+	int age;
+	int bp;
+	int sugar;
+
+	public Patient(String name, int age, int bp, int sugar) {
+		super();
+		this.name = name;
+		this.age = age;
+		this.bp = bp;
+		this.sugar = sugar;
+	}
+
+}

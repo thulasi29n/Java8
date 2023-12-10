@@ -1,0 +1,9 @@
+package in.ashokit;
+
+public class LengthDemo {
+
+}
+
+interface LengthInterface {
+	public Integer getLength(String s);
+}

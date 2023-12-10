@@ -1,0 +1,9 @@
+package in.ashokit;
+
+public class Demo3WithPredicate {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

@@ -1,0 +1,12 @@
+package in.ashokit;
+
+public class Demo implements InterfaceA, InterfaceB {
+	
+	public void m1() {
+		
+	}
+
+	public static void main(String[] args) {
+
+	}
+}

@@ -1,0 +1,14 @@
+package in.ashokit;
+
+public class Demo {
+
+	public void sayHi() {
+		System.out.println("Hi");
+	}
+
+	public static void main(String[] args) {
+		Demo d = new Demo();
+		d.sayHi();
+	}
+
+}

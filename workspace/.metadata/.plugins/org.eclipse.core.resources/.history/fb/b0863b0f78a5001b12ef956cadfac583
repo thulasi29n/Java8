@@ -1,0 +1,11 @@
+package in.ashokit;
+
+public class Demo1 {
+
+	public static void main(String[] args) {
+		Function<String, Integer> function = (str) -> {
+			return str.length();
+		};
+	}
+
+}

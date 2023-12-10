@@ -1,0 +1,19 @@
+package in.ashokit;
+
+public class Demo implements MyInterface{
+	
+	@Override
+	public void sayHi() {
+		System.out.println("Hi");
+	}
+
+	public static void main(String[] args) {
+
+	}
+
+}
+
+@FunctionalInterface
+interface MyInterface {
+	public void sayHi();
+}

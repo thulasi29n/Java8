@@ -1,0 +1,30 @@
+package in.ashokit;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Consumer;
+
+public class Demo1 {
+
+	public static void main(String[] args) {
+		List<String> fruits = new ArrayList<>();
+
+		fruits.add("Mango");
+		fruits.add("Apple");
+		fruits.add("Grape");
+		fruits.add("Banana");
+
+		for (String name : fruits) {
+			System.out.println(name);
+		}
+
+		System.out.println("-----------------------------");
+		Consumer<String> consumer = f -> System.out.println(f);
+		fruits.forEach(consumer);
+
+		System.out.println("-------------------------");
+
+		fruits.forEach(System.out::println); // using method reference
+	}
+
+}

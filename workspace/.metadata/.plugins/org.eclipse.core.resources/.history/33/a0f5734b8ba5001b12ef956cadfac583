@@ -1,0 +1,14 @@
+import java.util.function.UnaryOperator;
+
+public class Demo1 {
+
+	public static void main(String[] args) {
+
+		int input = 2;
+		
+		input = 4;
+
+		UnaryOperator<Integer> operator = (i) -> i * input;
+		System.out.println(operator.apply(3)); // 3 * input = 6
+	}
+}

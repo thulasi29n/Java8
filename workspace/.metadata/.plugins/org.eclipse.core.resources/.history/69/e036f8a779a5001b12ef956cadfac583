@@ -1,0 +1,17 @@
+package in.ashokit;
+
+public class Demo4 {
+
+}
+
+class User {
+
+	String uname;
+	String pwd;
+
+	@Override
+	public String toString() {
+		return "User [uname=" + uname + ", pwd=" + pwd + "]";
+	}
+
+}

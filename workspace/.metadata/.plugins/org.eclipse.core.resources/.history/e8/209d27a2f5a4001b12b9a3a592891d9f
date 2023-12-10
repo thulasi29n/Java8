@@ -1,0 +1,18 @@
+package in.ashokit;
+
+public class CalcDemo implements Calculator {
+
+	@Override
+	public void add(int i, int j) {
+		System.out.println(i+j);
+	}
+	
+	public static void main(String[] args) {
+
+	}
+}
+
+@FunctionalInterface
+interface Calculator {
+	public void add(int i, int j);
+}

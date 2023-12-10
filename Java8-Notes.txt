@@ -1,0 +1,473 @@
+Lambda expression -- anoymous function, no name, no return type, no modifier.
+	syntax: () -> {}
+	         (parameters) -> { 
+								implementation
+							}
+			 -> represents lambda expression.
+
+----------------------------------------------------------
+
+public void sayhi()
+{
+sysout("hi");
+}
+
+() -> {sysout("hi");} .. how to call this.... use functionl interface is used.
+______________________________________________
+public void add(int i,int j)
+{
+
+int k = i+j;
+sop(k);
+}
+
+(int i,int j) -> {
+  sop(i+j);
+}
+
+context based -- no data type --- type reference.
+
+(i,j) -> {sop(i+j);}
+__________________________________
+
+public int getLength(String str)
+{
+return str.length();
+}
+
+(String str) -> {return str.length();}
+
+(str) -> {return str.length();}
+
+compiler know str.length() will return length, no need to provide return.
+
+(str) -> {str.length();}
+
+when lambda has only one param, parenthesis is optional.
+
+str -> str.length();
+
+---------------------------------------------------------
+	public static List<Person> getPersons(List<Person> persons)
+	{
+		Collections.sort(persons, new Comparator<Person>(){
+
+			@Override
+			public int compare(Person o1, Person o2) {
+				return o1.getName().compareTo(o2.getName());
+			}
+			
+		});
+		return persons;
+	}
+	
+		public static List<Person> getPersons(List<Person> persons)
+	{
+		Collections.sort(persons, (p1,p2) -> p1.getName().compareTo(p2.getName()));
+		return persons;
+	}
+--------------------------------------------------------------------------------------
+
+Functional Interfaces  -- interface which has only one abstract method.
+---------------------------------------------------------------
+
+purpose : to execute the lambdas. // invoke lamda expression.
+
+predefined interfaces -- functional
+  1. runnable,callable, comparable
+  
+  2. ActionListener -> actionPerformed()
+  
+  
+Note: Functional Interface can contain any no of default and static methods. but only one abstract method.
+
+@FunctionalInterface
+public interface MyInterface
+{
+  public void m1();
+  default void m2() {}
+  public static void m3() {}
+  
+}
+
+-------------------------------------------------------------------------
+
+		// no need provide the object ... compiler will assume the implementation is being given for the interface reference
+		// no need to mention method name...
+	
+	Runnable r1 = () -> {
+		for(int i=0;i<10;i++) {
+			System.out.println("Lambda Thread...!");
+		}
+	};
+	
+	Thread t1 = new Thread(r1);
+	t1.start();
+	
+annoymous class implementation is only for interfaces.
+
+nothing return in thread -- go for runnable  -- objects needs to be associated with Thread class.
+
+if want get some return values from threads after execution -- use callable. -- no need to be associated with thread class... instead use executorservice.
+
+callable is preferred for multithreading.
+-------------------------------------------------------------------------------
+
+predefined functional interface: java.util.function -- package
+   1. predicate /Bi predicate
+   2. consumer / bi consumer
+   3. supplier
+   4. function / bi function
+
+
+Predicate
+----------------------------------------------
+
+It is used to perform some conditional operation and returns boolean value.
+
+interface Predicate<T> 
+{
+   boolean test(T k); // Type is data type, k is a variable
+   
+}
+#############################################
+public boolean test(Integer i)
+{
+  if(i>10) return true;
+  else return false;
+}
+
+#############################
+(i) -> {
+   if(i>10) return true;
+   else return false;
+}
+
+############################
+
+i -> i>10;
+
+#############################
+
+predicate  -- single arguement check
+Bi predicate -- more than one arguement to check.
+
+predicate interface is used to call the lambda
+
+-----------------------------------------------------------------------------------------
+
+Predicate Joining
+##################################################################################
+
+when we have mutiple conditions to check with single param-- go for predicate joining
+
+  predicate methods: test(), -- abstract
+						and(), 
+						or(), 
+						negate(), 
+						isEqual(); -- static method
+						
+----------------------------------------------------------------------------------------
+
+- negate method returns a predicate that represents the logical negation of the predication it is called.
+
+#########################################################################################
+
+Bi Predicate
+#########################################################################################
+
+if we want to supply 2 params then we can use BiPredicate<T,T> -- functional interface.
+
+-- it contains test(obj,obj) and returns boolean result... abstract method.
+
+-----------------------------------------------------------------------------------------
+
+
+Supplier -- functional doesn't take any arguements but produces a value when the get() is called.
+######################################################################
+
+ex: random pwd, otp,random name.
+
+Abstract Method : get()
+
+interface supplier
+{
+  R get(); // R return type- any
+}
+
+
+############################################################################
+
+consumer - it will take the input no return type. 
+abstract method : accept()
+##############################################################################
+
+interface Consumer
+{
+ void accept(T t) -- one input
+]
+
+Biconsumer -- take two inputs and return nothing.
+
+ConsumerChaining....
+#######################
+
+ andThen().accept()
+ 
+ 
+ ______________________________________________________________________________________
+ 
+ 
+ Function --- can take input(Type T) and return output(Type R)
+ 
+ #################################################################################
+ 
+ 
+FunctionChaining -- f1.andThen(f2); First f1 will execute then f2 will be executed.
+                 -- f1.compose)f2); First f2 will execute then f1 will be executed.
+				 
+
+Bifunction -- two inputs and one output
+
+-------------------------------------------------------------------------------------
+
+-> lambda expression can capture 3 types of variables
+			1. static	
+			2. instance
+			3. local -- final / effectively final.
+			
+Note : if a lambda expression capturing a local variable then the variable should be final or effectively final.
+
+-> before java8, we can't use non-final local variable in anaoymous class. if you need to access a local variable in anonymous implementation then it should be final.
+
+-> If local variable value is not changed in anonymous implementation then it is called effectively final variable.
+
+---------------------------------------------------------------------------------------
+
+UnaryOperator<T>  -- one input and one output -- this will be used when you are passing one input and expecting one output  of same type.
+
+-------------------------------------------------------------------------------------
+
+Interface -- Java 8
+####################################################
+
+interface can have
+	1. abstract 
+	2. concrete methods too -- these should be default or static only.
+	
+	static methods in interface can't be overridden.
+-------------------------------------------------------------------------
+
+Method reference and Constructor reference
+--------------------------------------------------------------------
+
+-> it is used to reference a method, they are similar to object reference.
+
+Note: relation between method reference and lambda expression
+
+method reference are shortned version of lambda.
+
+----------------------------------------------------------------------------------------
+
+Stream API
+
+-> Stream API -- used to process the data. It is not data structure, it is a bunch of operations applied to a source(IO/array/stream). 
+they wont change the data in the   original data structure.
+-> each operation is lazily executed.
+-> terminal ops produce the result of the stream.
+-> only one time stream operation can be done.
+-> Collection API -- used to store the data.
+
+
+Interfaces : IntStream,LongStream,DoubleStream etc...
+
+
+--> API have several methods to perform operations.
+
+        two type :
+		  1. intermediate operational methods. -- will not produce any results, they accept functional interface and always return new stream.
+		      --> filter(), map() etc
+		  2. terminal operational methods. -- will take input and produce results.
+		  
+		      --> count(),toarray(),collect() etc
+		      
+
+--> stream operational methods futher divided
+
+			1. filtering
+			2. slicing
+			3. mapping
+			4. matching and finding
+			5. reduction
+			6. collect
+
+-----------------------------------------------------------------------------------------
+
+Mapping ops are those ops that transforms the elements of a stream and return new stream with thansformed elements.
+
+      1. Map()
+	  2.FlatMap();
+	  
+Stream<R> map(Function function)
+
+--------------------------------------------------------------------------------------
+flatmap() -> is used to flatten a stream of collection to stream of elements
+
+------------------------------------------------------------------------------
+
+slicing --  intermediate ops, they are used to slice a stream.
+
+              1. distinct()
+			  2. limit()
+			  3. skip()
+-----------------------------------------------------------------------------
+
+Matching -- These methods will return true/false.
+			1. anyMatch() --> boolean anyMatch(Predicate predicate) -- is used to test the condition
+			2. allMatch()
+			3. noneMatch()
+-------------------------------------------------------------------------------
+
+finding operations -- based on condition values will be returned.
+
+			1. findfirst()
+			2. findAny() .. // used in parallel stream
+
+           
+---------------------------------------------------------------------------------
+
+reduction operations : (Mutable reductions).
+
+					 -- which reduce the stream into single value.
+					 -- single value immutable operations.
+					 -- max,min and other ops.
+
+		
+--------------------------------------------------------------------------------
+
+collection operations :  & Aggregate operations
+
+					collect
+					collectors.toMap(s->s,s->s.length())
+					averagingInt
+					joining
+
+
+----------------------------------------------------------------------------------
+
+GroupBy Operations:
+
+----------------------------------------------------------------------------------
+
+Parallel Streams:
+         -- parallelStream ()
+		 -- parallell
+		 
+----------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+

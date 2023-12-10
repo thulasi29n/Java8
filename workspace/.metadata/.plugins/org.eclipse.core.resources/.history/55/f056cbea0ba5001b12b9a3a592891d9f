@@ -1,0 +1,13 @@
+package in.ashokit;
+
+public class PredicateJoining {
+
+}
+
+class User {
+
+	Integer age;
+	String name;
+	boolean isGfAvailable;
+
+}

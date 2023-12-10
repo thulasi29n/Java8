@@ -1,0 +1,14 @@
+package in.ashokit;
+
+public class Demo2 {
+	public static void main(String[] args) {
+		NumberTestInterface inter = (i) -> i > 10;
+		System.out.println(inter.test(12));
+		System.out.println(inter.test(5));
+	}
+}
+
+@FunctionalInterface
+interface NumberTestInterface {
+	public boolean test(Integer i);
+}

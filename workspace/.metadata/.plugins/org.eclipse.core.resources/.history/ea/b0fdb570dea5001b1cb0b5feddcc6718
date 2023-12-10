@@ -1,0 +1,13 @@
+package in.ashokit;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class SliceDemo1 {
+	
+	public static void main(String[] args) {
+		List<String> countries = new ArrayList<>();
+		countries.add("India");
+	}
+
+}

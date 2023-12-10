@@ -1,0 +1,13 @@
+package in.ashokt;
+
+public class Demo5 {
+
+}
+
+class Patient {
+
+	String name;
+	int age;
+	int bp;
+	int sugar;
+}

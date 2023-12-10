@@ -1,0 +1,20 @@
+package in.ashokit;
+
+public class Demo {
+
+	public static void main(String[] args) {
+		MyInterface interf = new MyInterface() {
+			@Override
+			public void sayHi() {
+				// TODO Auto-generated method stub
+
+			}
+		};
+	}
+
+}
+
+@FunctionalInterface
+interface MyInterface {
+	public void sayHi();
+}

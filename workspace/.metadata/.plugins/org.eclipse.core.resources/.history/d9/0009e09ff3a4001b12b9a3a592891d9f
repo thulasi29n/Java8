@@ -1,0 +1,16 @@
+package in.ashokit;
+
+public class Demo {
+
+	public static void main(String[] args) {
+		MyInterface interf = new MyInterface();
+
+		interf.sayHi();
+	}
+
+}
+
+@FunctionalInterface
+interface MyInterface {
+	public void sayHi();
+}

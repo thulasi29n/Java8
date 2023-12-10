@@ -1,0 +1,16 @@
+package in.ashokit;
+
+@FunctionalInterface
+public interface MyInterface {
+
+	public void sayHi();
+
+	default void m2() {
+		System.out.println("this is m2");
+	}
+
+	default void m3() {
+		System.out.println("this is m3");
+	}
+
+}

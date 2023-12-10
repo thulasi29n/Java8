@@ -1,0 +1,24 @@
+package in.ashokit;
+
+import java.util.concurrent.Callable;
+
+public class ThreadDemo2 {
+
+	public static void main(String[] args) {
+		UserThread ut = new UserThread();
+		Thread t = new Thread(ut);
+		
+	}
+
+}
+
+class UserThread implements Callable<String> {
+
+	@Override
+	public String call() throws Exception {
+		for (int i = 1; i <= 10; i++) {
+			System.out.println("Child Thread");
+		}
+		return "";
+	}
+}

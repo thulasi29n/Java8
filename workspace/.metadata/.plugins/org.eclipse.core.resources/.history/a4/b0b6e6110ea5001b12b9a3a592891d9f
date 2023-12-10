@@ -1,0 +1,33 @@
+package in.ashokit;
+
+import java.util.function.Predicate;
+
+public class PredicateJoining2 {
+	
+	public static boolean isMemberAllowedInPortal(Member m, Predicate<Member> p1, Predicate<Member> p2) {
+		
+	}
+
+	public static void main(String[] args) {
+
+		Member m = new Member("Kailash", 26);
+
+		Predicate<Member> p1 = (member) -> member.age >= 21;
+
+		Predicate<Member> p2 = (member) -> member.age <= 60;
+
+	}
+
+}
+
+class Member {
+
+	String name;
+	Integer age;
+
+	public Member(String name, Integer age) {
+		this.name = name;
+		this.age = age;
+	}
+
+}

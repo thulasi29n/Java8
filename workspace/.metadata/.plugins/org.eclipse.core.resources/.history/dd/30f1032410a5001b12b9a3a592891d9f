@@ -1,0 +1,11 @@
+package in.ashokit;
+
+import java.util.function.Predicate;
+
+public class PredicateNegateDemo {
+
+	public static void main(String[] args) {
+		Predicate<Integer> p = p -> 10;
+	}
+
+}

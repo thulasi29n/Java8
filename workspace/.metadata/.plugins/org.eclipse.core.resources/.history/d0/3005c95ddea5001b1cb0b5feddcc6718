@@ -1,0 +1,9 @@
+package in.ashokit;
+
+public class SliceDemo1 {
+	
+	public static void main(String[] args) {
+		List<String> countries = new ArrayList<>();
+	}
+
+}

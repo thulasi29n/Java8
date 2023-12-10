@@ -1,0 +1,20 @@
+package in.ashokit;
+
+public class PredicateJoining {
+
+}
+
+class User {
+
+	Integer age;
+	String name;
+	boolean isSingle;
+	
+	public User(Integer age, String name, boolean isSingle) {
+		this.age = age;
+		this.name = name;
+		this.isSingle = isSingle;
+	}
+
+	
+}

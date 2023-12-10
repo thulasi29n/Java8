@@ -1,0 +1,15 @@
+package in.ashokit;
+
+public class LengthDemo {
+
+	public static void main(String[] args) {
+		LengthInterface interf = s -> s.length();
+		interf.getLength("Ashok IT");
+	}
+
+}
+
+@FunctionalInterface
+interface LengthInterface {
+	public Integer getLength(String s);
+}

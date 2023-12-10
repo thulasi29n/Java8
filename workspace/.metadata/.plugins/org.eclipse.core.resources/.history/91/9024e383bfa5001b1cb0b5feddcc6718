@@ -1,0 +1,9 @@
+package in.ashokit;
+
+public class Demo2 {
+
+}
+
+interface MyInterface {
+	public void m1();
+}

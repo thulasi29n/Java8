@@ -1,0 +1,17 @@
+package in.ashokit;
+
+public class Demo4 {
+
+}
+
+class User {
+
+	String uname;
+	String pwd;
+
+	public User(String uname, String pwd) {
+		this.uname = uname;
+		this.pwd = pwd;
+	}
+
+}

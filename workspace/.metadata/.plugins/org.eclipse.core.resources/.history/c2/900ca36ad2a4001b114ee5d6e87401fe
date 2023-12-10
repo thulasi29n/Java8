@@ -1,0 +1,8 @@
+package in.ashokit;
+
+public interface MyInterface {
+
+	public void sayHi();
+
+	public void m2();
+}

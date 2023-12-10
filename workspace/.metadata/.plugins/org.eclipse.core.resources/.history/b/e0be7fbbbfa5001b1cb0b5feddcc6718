@@ -1,0 +1,19 @@
+package in.ashokit;
+
+public class Demo2 {
+
+	public void m2() {
+		System.out.println("This is m2() method....");
+	}
+
+	public static void main(String[] args) {
+		
+		MyInterface interface = Demo2::m2;
+		
+	}
+
+}
+
+interface MyInterface {
+	public void m1();
+}

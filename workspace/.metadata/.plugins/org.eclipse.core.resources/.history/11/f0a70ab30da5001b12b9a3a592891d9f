@@ -1,0 +1,22 @@
+package in.ashokit;
+
+public class PredicateJoining2 {
+
+	public static void main(String[] args) {
+
+	}
+
+}
+
+class Member {
+
+	String name;
+	String age;
+
+	public Member(String name, String age) {
+		super();
+		this.name = name;
+		this.age = age;
+	}
+
+}

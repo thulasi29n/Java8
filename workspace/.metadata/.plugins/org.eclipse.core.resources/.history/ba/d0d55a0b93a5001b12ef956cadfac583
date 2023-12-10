@@ -1,0 +1,18 @@
+package in.ashokit;
+
+public class Demo implements InterfaceA, InterfaceB {
+
+	public void m1() {
+		// Option-1 : Provide your own implementation for common method in both
+		// interfaces
+		System.out.println("Hi... i am from Demo m1() method");
+
+		InterfaceA.super.m1();
+		InterfaceB.super.m2();
+
+	}
+
+	public static void main(String[] args) {
+
+	}
+}

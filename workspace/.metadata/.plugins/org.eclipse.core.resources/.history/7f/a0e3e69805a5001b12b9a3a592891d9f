@@ -1,0 +1,17 @@
+package in.ashokit;
+
+import java.util.Collection;
+
+public class Demo4 {
+
+	public static void main(String[] args) {
+
+		CheckCollection collection = c -> c.isEmpty();
+
+	}
+
+}
+
+interface CheckCollection {
+	public boolean check(Collection c);
+}

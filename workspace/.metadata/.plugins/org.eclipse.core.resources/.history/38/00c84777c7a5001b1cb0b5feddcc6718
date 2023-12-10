@@ -1,0 +1,19 @@
+package in.ashokit;
+
+public class Demo1 {
+
+	public static void main(String[] args) {
+
+	}
+
+}
+
+class Sample {
+	public Sample() {
+		System.out.println("Sample::Constructor");
+	}
+}
+
+interface MyInterface {
+	public Sample get();
+}

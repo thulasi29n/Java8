@@ -1,0 +1,23 @@
+package in.ashokit;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class StreamDemo2 {
+
+	public static void main(String[] args) {
+		List<Person> persons = new ArrayList<>();
+		persons.add(new Person("Ashok", 28));
+
+	}
+}
+
+class Person {
+	String name;
+	int age;
+
+	public Person(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+}

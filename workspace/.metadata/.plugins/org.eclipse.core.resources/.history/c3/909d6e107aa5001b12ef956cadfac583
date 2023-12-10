@@ -1,0 +1,33 @@
+package in.ashokit;
+
+import java.util.function.Function;
+
+public class Demo4 {
+
+	public static void main(String[] args) {
+		User user1 = new User("admin", "admin@123");
+		
+		Function<User, String> function = (user) -> {
+			if (user.uname.equals("admin") && user.pwd.equals("admin123")) {
+				return "Login Success";
+			} else {
+				return "Invalid Credentials";
+			}
+		};
+		
+		function.apply(user1);
+	}
+
+}
+
+class User {
+
+	String uname;
+	String pwd;
+
+	public User(String uname, String pwd) {
+		this.uname = uname;
+		this.pwd = pwd;
+	}
+
+}

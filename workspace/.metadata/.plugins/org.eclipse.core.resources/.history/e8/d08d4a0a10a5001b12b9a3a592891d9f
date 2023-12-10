@@ -1,0 +1,9 @@
+package in.ashokit;
+
+public class PredicateNegateDemo {
+
+	public static void main(String[] args) {
+			
+	}
+
+}

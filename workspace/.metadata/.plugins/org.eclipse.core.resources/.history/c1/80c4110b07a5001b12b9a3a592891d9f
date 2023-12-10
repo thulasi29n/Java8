@@ -1,0 +1,22 @@
+package in.ashokit;
+
+import java.util.function.Predicate;
+
+public class Demo6 {
+
+	public static boolean isPersonEligForVote(Person person, Predicate<Person> predicate) {
+
+	}
+
+}
+
+class Person {
+	String name;
+	Integer age;
+
+	Person(String name, Integer age) {
+		this.name = name;
+		this.age = age;
+	}
+
+}

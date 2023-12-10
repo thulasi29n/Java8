@@ -1,0 +1,9 @@
+package in.ashokit;
+
+public class Demo2 {
+
+}
+
+interface NumberTestInterface{
+	public boolean test(Integer i);
+}

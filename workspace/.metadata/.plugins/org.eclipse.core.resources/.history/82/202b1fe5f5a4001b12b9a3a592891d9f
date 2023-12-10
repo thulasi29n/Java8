@@ -1,0 +1,14 @@
+package in.ashokit;
+
+public class CalcDemo {
+
+	public static void main(String[] args) {
+		Calculator c = new Calculator() { };
+		c.add(10, 20);
+	}
+}
+
+@FunctionalInterface
+interface Calculator {
+	public void add(int i, int j);
+}
